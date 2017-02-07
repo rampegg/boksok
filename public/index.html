@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>hej</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/vue.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="heading">
+            <h1>Bokhittaren</h1><small>Jämför utbud hos olika ljudbokstjänster.</small>
+        </div>
+        <br>
+        <div class="col-xs-12">
+            <form v-on:submit="search">
+                <div class="form-group">
+                    <input class="form-control" type="text" v-model="searchWord" />
+                </div>
+            </form>
+            <br>
+            <br>
+            <div v-for="list in items" class="col-xs-4">
+                <h3 v-if="list && list.length > 0">{{list[0].source }}</h3>
+                <div v-for="item in list" class="col-xs-12 result-container">
+                    <div class="col-xs-3 text-center"><img class="cover-img" v-bind:src="item.img" alt=""></div>
+                    <div class="col-xs-9">
+                        <h4>{{ item.title }}</h4>
+                        <h5>{{ item.author }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
