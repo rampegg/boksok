@@ -78,7 +78,6 @@ function doStorytelSearch(searchword) {
                 body = body[p]
             })
             body.forEach(function(books) {
-                console.log(books.book)
                 result.push({ source: "Storytel", author: books.book.authors.map(a => a.name).join(", "), title: books.book.name, img: "http://www.storytel.se/" + books.book.cover })
             })
             p.resolve(result)

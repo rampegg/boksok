@@ -24,7 +24,7 @@
             </form>
             <br>
             <br>
-            <div v-for="list in items" class="col-xs-4">
+            <div v-for="list in items" class="col-md-4">
                 <h3 v-if="list && list.length > 0">{{list[0].source }}</h3>
                 <div v-for="item in list" class="col-xs-12 result-container">
                     <div class="col-xs-3 text-center"><img class="cover-img" v-bind:src="item.img" alt=""></div>
